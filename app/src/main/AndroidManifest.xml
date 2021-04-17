@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.test_git">
+    package="com.example.test_git" >
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Test_git">
-        <activity android:name=".game"></activity>
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Test_git" >
+        <activity
+            android:name=".navigator"
+            android:label="@string/title_activity_navigator" >
+        </activity>
+        <activity android:name=".game" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
