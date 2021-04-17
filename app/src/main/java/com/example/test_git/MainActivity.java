@@ -53,7 +53,7 @@ import java.util.ArrayList;
         btg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, game.class);
+                Intent intent = new Intent(MainActivity.this, navigator.class);
                 startActivity(intent);
             }
         });
