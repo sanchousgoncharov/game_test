@@ -1,4 +1,4 @@
-package com.example.test_git;
+ package com.example.test_git;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +13,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+ public class MainActivity extends AppCompatActivity {
 
     Button btg;
-    String[] valCountries = { "1", "2", "3", "4", "5", "6", "7", "8" };
+    String[] valCountries = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }; //кол-во стран
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
