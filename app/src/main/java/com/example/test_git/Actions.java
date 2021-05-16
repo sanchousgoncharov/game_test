@@ -12,7 +12,7 @@ public class Actions {
     }
 
 
-    public void stepEnd(){
-
+    public int getSteps(){
+      return steps;
     }
 }

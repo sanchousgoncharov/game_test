@@ -1,5 +1,7 @@
 package com.example.test_git.ui.notifications;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.test_git.MainActivity;
+import com.example.test_git.Navigator;
 import com.example.test_git.R;
+import com.example.test_git.ResBetweenSteps;
 
+import static com.example.test_git.MainActivity.value_of_Countries;
+import static com.example.test_git.Navigator.countries;
 import static com.example.test_git.Navigator.navController;
 
 public class NotificationsFragment extends Fragment {
@@ -29,9 +36,41 @@ public class NotificationsFragment extends Fragment {
         decree.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-//                switch (){
-//                    case ();
-//                }
+                switch (countries){
+                    case (1):
+                        countries = value_of_Countries.getSteps();
+                        Intent intent = new Intent(getContext(), ResBetweenSteps.class);
+                        startActivity(intent);
+                    case (2):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (3):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (4):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (5):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (6):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (7):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+                    case (8):
+                        countries--;
+                        navController.navigate(R.id.navigation_home);
+                        break;
+
+                }
                 navController.navigate(R.id.navigation_home);
             }
         });

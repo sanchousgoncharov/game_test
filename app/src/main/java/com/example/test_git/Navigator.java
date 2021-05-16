@@ -8,9 +8,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import static com.example.test_git.MainActivity.value_of_Countries;
+
 public class Navigator extends AppCompatActivity {
     public static NavController navController;
-
+    public static int countries = value_of_Countries.getSteps();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
