@@ -10,10 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Test_git" >
         <activity
-            android:name=".navigator"
+            android:name=".Navigator"
             android:label="@string/title_activity_navigator" >
         </activity>
-        <activity android:name=".game" />
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
