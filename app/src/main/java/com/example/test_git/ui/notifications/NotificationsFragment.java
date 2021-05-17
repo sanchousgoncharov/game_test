@@ -20,8 +20,16 @@ import com.example.test_git.R;
 import com.example.test_git.ResBetweenSteps;
 
 import static com.example.test_git.MainActivity.value_of_Countries;
+import static com.example.test_git.Navigator.britain;
+import static com.example.test_git.Navigator.china;
 import static com.example.test_git.Navigator.countries;
+import static com.example.test_git.Navigator.france;
+import static com.example.test_git.Navigator.germany;
+import static com.example.test_git.Navigator.india;
+import static com.example.test_git.Navigator.kndr;
 import static com.example.test_git.Navigator.navController;
+import static com.example.test_git.Navigator.russia;
+import static com.example.test_git.Navigator.usa;
 
 public class NotificationsFragment extends Fragment {
     private Fragment fragment = null;
@@ -38,9 +46,27 @@ public class NotificationsFragment extends Fragment {
             public void onClick(View v) {
                 switch (countries){
                     case (1):
-                        countries = value_of_Countries.getSteps();
+
                         Intent intent = new Intent(getContext(), ResBetweenSteps.class);
                         startActivity(intent);
+                        countries = value_of_Countries.getSteps();
+                        china.oneStepEcology();
+                        china.oneStepLifeLevel();
+                        britain.oneStepLifeLevel();
+                        britain.oneStepEcology();
+                        india.oneStepLifeLevel();
+                        india.oneStepEcology();
+                        russia.oneStepLifeLevel();
+                        russia.oneStepEcology();
+                        germany.oneStepLifeLevel();
+                        germany.oneStepEcology();
+                        usa.oneStepLifeLevel();
+                        usa.oneStepEcology();
+                        france.oneStepLifeLevel();
+                        france.oneStepEcology();
+                        kndr.oneStepLifeLevel();
+                        kndr.oneStepEcology();
+                        break;
                     case (2):
                         countries--;
                         navController.navigate(R.id.navigation_home);

@@ -13,6 +13,15 @@ import static com.example.test_git.MainActivity.value_of_Countries;
 public class Navigator extends AppCompatActivity {
     public static NavController navController;
     public static int countries = value_of_Countries.getSteps();
+    public static Country china = new Country("Китай");
+    public static Country britain = new Country("Великобритания");
+    public static Country india = new Country("Индия");
+    public static Country russia = new Country("Россия");
+    public static Country germany = new Country("Германия");
+    public static Country usa = new Country("США");
+    public static Country france = new Country("Франция");
+    public static Country kndr = new Country("КНДР");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
