@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,6 +28,7 @@ import static com.example.test_git.Navigator.kndr;
 import static com.example.test_git.Navigator.navController;
 import static com.example.test_git.Navigator.russia;
 import static com.example.test_git.Navigator.usa;
+import static com.example.test_git.ui.notifications.NotificationsFragment.spinnerGuardChoose;
 
 public class HomeFragment extends Fragment {
 
@@ -38,6 +40,7 @@ public class HomeFragment extends Fragment {
     public static TextView tv_guard;
     public static TextView tv_rockets;
     public static TextView tv_name;
+
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -71,6 +74,7 @@ public class HomeFragment extends Fragment {
                 tv_guard.setText("Очков защиты " + britain.getGuard());
                 tv_rockets.setText("Ядерных ракет " + britain.getNukeRockets());
                 tv_name.setText(britain.getName());
+
                 break;
             case (3):
                 pb_lifeLevel.setProgress(india.getLifeLevel());
@@ -125,6 +129,8 @@ public class HomeFragment extends Fragment {
                 tv_guard.setText("Очков защиты " + kndr.getGuard());
                 tv_rockets.setText("Ядерных ракет " + kndr.getNukeRockets());
                 tv_name.setText(kndr.getName());
+
+
                 break;
 
         }

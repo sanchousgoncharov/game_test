@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">test_git</string>
+    <string name="app_name">Мировое господство</string>
     <string name="title_activity_navigator">MainActivity</string>
     <string name="title_menu_table_country">Страна</string>
     <string name="title_menu_table_world">Мир</string>
