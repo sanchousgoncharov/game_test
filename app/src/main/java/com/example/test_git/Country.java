@@ -14,13 +14,29 @@ import static com.example.test_git.Navigator.india;
 import static com.example.test_git.Navigator.kndr;
 import static com.example.test_git.Navigator.russia;
 import static com.example.test_git.Navigator.usa;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb1;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb2;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb3;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb4;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb5;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb6;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb7;
+import static com.example.test_git.ui.dashboard.DashboardFragment.pb8;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv1;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv2;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv3;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv4;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv5;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv6;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv7;
+import static com.example.test_git.ui.dashboard.DashboardFragment.tv8;
 import static com.example.test_git.ui.notifications.NotificationsFragment.spinnerFight;
 import static com.example.test_git.ui.notifications.NotificationsFragment.spinnerGuardChoose;
 
 public class Country {
     private String name;
     private int lifeLevel = 50;
-    private int guard = 0;
+    private int guard = 2;
     private int ecology = 100;
     private int nukeRockets = 0;
     private int steps = 0;
@@ -46,19 +62,22 @@ public class Country {
         if (lifeLevel >= 50){
             guard += (lifeLevel - 50)/10;
         }
+        if (ecology >= 50){
+            guard += (ecology - 50)/10;
+        }
         if (steps >= 3 && steps % 2 != 0) nukeRockets++;
     }
 
     public void lifeLevelUp(){ //если выбрали увеличить уровень жизни
         if (guard > 0) {
-            lifeLevel = (int) (lifeLevel + lifeLevel * 0.05);
+            lifeLevel = (int) (lifeLevel + lifeLevel * 0.1);
             guard--;
         }
     }
 
     public void ecologyUp(){ //если выбрали увеличить уровень экологии
         if (guard > 0) {
-            ecology = (int) (ecology + ecology * 0.05);
+            ecology = (int) (ecology + ecology * 0.1);
             guard--;
         }
     }
@@ -79,56 +98,59 @@ public class Country {
     //поднятие уровня жизни и экологи за очки
     public void itemSelected(Country country){ if (spinnerGuardChoose.getSelectedItemPosition() == 1) country.lifeLevelUp();  else if(spinnerGuardChoose.getSelectedItemPosition() == 2) country.ecologyUp(); }
 
-    public void rocketHit(){ //механика удара по стране
-        switch (spinnerFight.getSelectedItemPosition()){
-            case(8)://kndr
-                if (nukeRockets > 0){
+    public void rocketHit() { //механика удара по стране
+        switch (spinnerFight.getSelectedItemPosition()) {
+            case (8)://kndr
+                if (nukeRockets > 0) {
                     kndr.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(7)://france
-                if (nukeRockets > 0){
+            case (7)://france
+                if (nukeRockets > 0) {
                     france.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(6)://usa
-                if (nukeRockets > 0){
+            case (6)://usa
+                if (nukeRockets > 0) {
                     usa.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(5)://germany
-                if (nukeRockets > 0){
+            case (5)://germany
+                if (nukeRockets > 0) {
                     germany.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(4)://russia
-                if (nukeRockets > 0){
+            case (4)://russia
+                if (nukeRockets > 0) {
                     russia.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(3)://india
-                if (nukeRockets > 0){
+            case (3)://india
+                if (nukeRockets > 0) {
                     india.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(2)://britain
-                if (nukeRockets > 0){
+            case (2)://britain
+                if (nukeRockets > 0) {
                     britain.nukeDanger();
                     nukeRockets--;
                 }
                 break;
-            case(1)://china
-                if (nukeRockets > 0){
+            case (1)://china
+                if (nukeRockets > 0) {
                     china.nukeDanger();
                     nukeRockets--;
                 }
                 break;
         }
     }
+
+
+
 }
