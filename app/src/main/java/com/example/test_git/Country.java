@@ -1,10 +1,5 @@
 package com.example.test_git;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
 import static com.example.test_git.MainActivity.value_of_Countries;
 import static com.example.test_git.Navigator.britain;
 import static com.example.test_git.Navigator.china;
@@ -14,22 +9,6 @@ import static com.example.test_git.Navigator.india;
 import static com.example.test_git.Navigator.kndr;
 import static com.example.test_git.Navigator.russia;
 import static com.example.test_git.Navigator.usa;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb1;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb2;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb3;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb4;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb5;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb6;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb7;
-import static com.example.test_git.ui.dashboard.DashboardFragment.pb8;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv1;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv2;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv3;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv4;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv5;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv6;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv7;
-import static com.example.test_git.ui.dashboard.DashboardFragment.tv8;
 import static com.example.test_git.ui.notifications.NotificationsFragment.spinnerFight;
 import static com.example.test_git.ui.notifications.NotificationsFragment.spinnerGuardChoose;
 
@@ -40,8 +19,9 @@ public class Country {
     private int ecology = 100;
     private int nukeRockets = 0;
     private int steps = 0;
-
-    public Country(String name){ this.name = name; } //задаём имя страны
+    private int id = 0;
+    
+    public Country(String name, int id){ this.name = name; } //задаём имя страны
 
     public String getName(){ return name; } //возращает имя
 
@@ -55,16 +35,14 @@ public class Country {
 
     public int getSteps(){ return steps; } //возращает кол-во шагов
 
+    public int getId(){ return id; } //возращает id объекта
+    
     public void oneStep(){ //механика за один ход
         steps++;
         lifeLevel -= 10;
         ecology -= 5 * value_of_Countries.getSteps();
-        if (lifeLevel >= 50){
-            guard += (lifeLevel - 50)/10;
-        }
-        if (ecology >= 50){
-            guard += (ecology - 50)/10;
-        }
+        if (lifeLevel >= 50) guard += (lifeLevel - 50)/10;
+        if (ecology >= 50) guard += (ecology - 50)/10;
         if (steps >= 3 && steps % 2 != 0) nukeRockets++;
     }
 
@@ -90,15 +68,21 @@ public class Country {
         }
     }
 
-    public void checkSpinnerValues(){ //проверка защиты и ракеты чтобы не ноль
-        if (guard <= 0) spinnerGuardChoose.setEnabled(false);
-        if (nukeRockets <= 0) spinnerFight.setEnabled(false);
+    public void checkSpinnerValues(Country country){ //проверка защиты и ракеты чтобы не ноль, проверка checkCountry
+        if (!country.checkCountry()) {
+            if (guard <= 0) spinnerGuardChoose.setEnabled(false);
+            if (nukeRockets <= 0) spinnerFight.setEnabled(false);
+        } else {
+            spinnerGuardChoose.setEnabled(false);
+            spinnerFight.setEnabled(false);
+        }
     }
 
     //поднятие уровня жизни и экологи за очки
     public void itemSelected(Country country){ if (spinnerGuardChoose.getSelectedItemPosition() == 1) country.lifeLevelUp();  else if(spinnerGuardChoose.getSelectedItemPosition() == 2) country.ecologyUp(); }
 
-    public void rocketHit() { //механика удара по стране
+    //механика удара по стране
+    public void rocketHit() {
         switch (spinnerFight.getSelectedItemPosition()) {
             case (8)://kndr
                 if (nukeRockets > 0) {
@@ -151,6 +135,7 @@ public class Country {
         }
     }
 
-
+    //проверка уровня жизни 
+    public boolean checkCountry(){ return lifeLevel <= 0 || ecology <= 0; }
 
 }

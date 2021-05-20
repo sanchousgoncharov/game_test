@@ -17,6 +17,15 @@ import com.example.test_git.Country;
 import com.example.test_git.R;
 import com.example.test_git.Stat;
 
+import static com.example.test_git.Navigator.britain;
+import static com.example.test_git.Navigator.china;
+import static com.example.test_git.Navigator.france;
+import static com.example.test_git.Navigator.germany;
+import static com.example.test_git.Navigator.india;
+import static com.example.test_git.Navigator.kndr;
+import static com.example.test_git.Navigator.russia;
+import static com.example.test_git.Navigator.usa;
+
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
@@ -59,7 +68,15 @@ public class DashboardFragment extends Fragment {
         pb7 = (ProgressBar) root.findViewById(R.id.pb7);
         tv8 = (TextView) root.findViewById(R.id.tv8);
         pb8 = (ProgressBar) root.findViewById(R.id.pb8);
-        statView.statView();
+        pb1.setProgress(china.getLifeLevel());
+        pb2.setProgress(britain.getLifeLevel());
+        pb3.setProgress(india.getLifeLevel());
+        pb4.setProgress(russia.getLifeLevel());
+        pb5.setProgress(germany.getLifeLevel());
+        pb6.setProgress(usa.getLifeLevel());
+        pb7.setProgress(france.getLifeLevel());
+        pb8.setProgress(kndr.getLifeLevel());
+        statView.statViewDashboard();
 
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

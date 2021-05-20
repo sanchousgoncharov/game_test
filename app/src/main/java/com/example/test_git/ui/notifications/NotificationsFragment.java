@@ -60,28 +60,28 @@ public class NotificationsFragment extends Fragment {
         spinnerFight.setAdapter(adapter2);
         switch (countries){
             case (1): //китай
-                china.checkSpinnerValues();
+                china.checkSpinnerValues(china);
                 break;
             case (2): //британия
-                britain.checkSpinnerValues();
+                britain.checkSpinnerValues(britain);
                 break;
             case (3): //индия
-                india.checkSpinnerValues();
+                india.checkSpinnerValues(india);
                 break;
             case (4): //россия
-                russia.checkSpinnerValues();
+                russia.checkSpinnerValues(russia);
                 break;
             case (5): //германия
-                germany.checkSpinnerValues();
+                germany.checkSpinnerValues(germany);
                 break;
             case (6): //сша
-                usa.checkSpinnerValues();
+                usa.checkSpinnerValues(usa);
                 break;
             case (7): //франция
-                france.checkSpinnerValues();
+                france.checkSpinnerValues(france);
                 break;
             case (8): //кндр
-                kndr.checkSpinnerValues();
+                kndr.checkSpinnerValues(kndr);
                 break;
         }
         final Button decree = (Button) root.findViewById(R.id.decree);
@@ -91,6 +91,8 @@ public class NotificationsFragment extends Fragment {
                 switch (countries){
                     case (1): //китай
                         Intent intent = new Intent(getContext(), ResBetweenSteps.class);
+                        intent.putExtra("china", china.getLifeLevel());
+
                         startActivity(intent);
                         countries = value_of_Countries.getSteps();
                         china.oneStep();

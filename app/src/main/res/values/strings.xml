@@ -4,7 +4,9 @@
     <string name="title_menu_table_country">Страна</string>
     <string name="title_menu_table_world">Мир</string>
     <string name="title_menu_action">Издать указ</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Страна</string>
+    <string name="title_dashboard">Статистика мира</string>
+    <string name="title_notifications">Указ</string>
+    <string name="titleGuard">Потратить \nочки защиты</string>
+    <string name="titleRockets">Запустить \nядерную ракету </string>
 </resources>

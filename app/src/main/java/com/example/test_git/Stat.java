@@ -4,6 +4,30 @@ import android.view.View;
 
 import static android.view.View.VISIBLE;
 import static com.example.test_git.MainActivity.value_of_Countries;
+import static com.example.test_git.Navigator.britain;
+import static com.example.test_git.Navigator.china;
+import static com.example.test_git.Navigator.france;
+import static com.example.test_git.Navigator.germany;
+import static com.example.test_git.Navigator.india;
+import static com.example.test_git.Navigator.kndr;
+import static com.example.test_git.Navigator.russia;
+import static com.example.test_git.Navigator.usa;
+import static com.example.test_git.ResBetweenSteps.pb_1;
+import static com.example.test_git.ResBetweenSteps.pb_2;
+import static com.example.test_git.ResBetweenSteps.pb_3;
+import static com.example.test_git.ResBetweenSteps.pb_4;
+import static com.example.test_git.ResBetweenSteps.pb_5;
+import static com.example.test_git.ResBetweenSteps.pb_6;
+import static com.example.test_git.ResBetweenSteps.pb_7;
+import static com.example.test_git.ResBetweenSteps.pb_8;
+import static com.example.test_git.ResBetweenSteps.tv_1;
+import static com.example.test_git.ResBetweenSteps.tv_2;
+import static com.example.test_git.ResBetweenSteps.tv_3;
+import static com.example.test_git.ResBetweenSteps.tv_4;
+import static com.example.test_git.ResBetweenSteps.tv_5;
+import static com.example.test_git.ResBetweenSteps.tv_6;
+import static com.example.test_git.ResBetweenSteps.tv_7;
+import static com.example.test_git.ResBetweenSteps.tv_8;
 import static com.example.test_git.ui.dashboard.DashboardFragment.pb1;
 import static com.example.test_git.ui.dashboard.DashboardFragment.pb2;
 import static com.example.test_git.ui.dashboard.DashboardFragment.pb3;
@@ -129,7 +153,7 @@ public class Stat {
 //
 //    }
 
-public void statView(){ //показ статы
+    public void statViewDashboard(){ //показ статы
         tv8.setVisibility(View.INVISIBLE);
         pb8.setVisibility(View.INVISIBLE);
         tv7.setVisibility(View.INVISIBLE);
@@ -233,5 +257,118 @@ public void statView(){ //показ статы
                 break;
         }
 
+    }
+
+    public void statViewResBetweenSteps(){
+        tv_8.setVisibility(View.INVISIBLE);
+        pb_8.setVisibility(View.INVISIBLE);
+        tv_7.setVisibility(View.INVISIBLE);
+        pb_7.setVisibility(View.INVISIBLE);
+        tv_6.setVisibility(View.INVISIBLE);
+        pb_6.setVisibility(View.INVISIBLE);
+        tv_5.setVisibility(View.INVISIBLE);
+        pb_5.setVisibility(View.INVISIBLE);
+        tv_4.setVisibility(View.INVISIBLE);
+        pb_4.setVisibility(View.INVISIBLE);
+        tv_3.setVisibility(View.INVISIBLE);
+        pb_3.setVisibility(View.INVISIBLE);
+        tv_2.setVisibility(View.INVISIBLE);
+        pb_2.setVisibility(View.INVISIBLE);
+        tv_1.setVisibility(View.INVISIBLE);
+        pb_1.setVisibility(View.INVISIBLE);
+        pb_1.setProgress(china.getLifeLevel());
+        pb_2.setProgress(britain.getLifeLevel());
+        pb_3.setProgress(india.getLifeLevel());
+        pb_4.setProgress(russia.getLifeLevel());
+        pb_5.setProgress(germany.getLifeLevel());
+        pb_6.setProgress(usa.getLifeLevel());
+        pb_7.setProgress(france.getLifeLevel());
+        pb_8.setProgress(kndr.getLifeLevel());
+        switch (value_of_Countries.getSteps()) {
+            case (8)://kndr
+                tv_8.setVisibility(VISIBLE);
+                pb_8.setVisibility(VISIBLE);
+                tv_7.setVisibility(VISIBLE);
+                pb_7.setVisibility(VISIBLE);
+                tv_6.setVisibility(VISIBLE);
+                pb_6.setVisibility(VISIBLE);
+                tv_5.setVisibility(VISIBLE);
+                pb_5.setVisibility(VISIBLE);
+                tv_4.setVisibility(VISIBLE);
+                pb_4.setVisibility(VISIBLE);
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (7)://france
+                tv_7.setVisibility(VISIBLE);
+                pb_7.setVisibility(VISIBLE);
+                tv_6.setVisibility(VISIBLE);
+                pb_6.setVisibility(VISIBLE);
+                tv_5.setVisibility(VISIBLE);
+                pb_5.setVisibility(VISIBLE);
+                tv_4.setVisibility(VISIBLE);
+                pb_4.setVisibility(VISIBLE);
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (6)://usa
+                tv_6.setVisibility(VISIBLE);
+                pb_6.setVisibility(VISIBLE);
+                tv_5.setVisibility(VISIBLE);
+                pb_5.setVisibility(VISIBLE);
+                tv_4.setVisibility(VISIBLE);
+                pb_4.setVisibility(VISIBLE);
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (5)://germany
+                tv_5.setVisibility(VISIBLE);
+                pb_5.setVisibility(VISIBLE);
+                tv_4.setVisibility(VISIBLE);
+                pb_4.setVisibility(VISIBLE);
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (4)://russia
+                tv_4.setVisibility(VISIBLE);
+                pb_4.setVisibility(VISIBLE);
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (3)://india
+                tv_3.setVisibility(VISIBLE);
+                pb_3.setVisibility(VISIBLE);
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+            case (2)://britain
+                tv_2.setVisibility(VISIBLE);
+                pb_2.setVisibility(VISIBLE);
+                tv_1.setVisibility(VISIBLE);
+                pb_1.setVisibility(VISIBLE);
+                break;
+        }
     }
 }
