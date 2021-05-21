@@ -9,4 +9,5 @@
     <string name="title_notifications">Указ</string>
     <string name="titleGuard">Потратить \nочки защиты</string>
     <string name="titleRockets">Запустить \nядерную ракету </string>
+    <string name="chooseNumPR">ИГРОКОВ:</string>
 </resources>
